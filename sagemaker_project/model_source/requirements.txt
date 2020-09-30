@@ -1,0 +1,4 @@
+simpletransformers==0.20.3
+transformers==2.5.1
+#sagemaker==2.9.2
+# "curl https://sh.rustup.rs -sSf | sh"

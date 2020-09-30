@@ -5,14 +5,14 @@ import boto3
 import os
 import botocore
 
-from model_sagemaker.sagemaker_env import BUCKET_NAME, ROLE_NAME, ENDPOINT_NAME
+from prediki.sagemaker_project.model_sagemaker.sagemaker_env import BUCKET_NAME, ROLE_NAME, ENDPOINT_NAME
 
 
 def build_upload_model_remote():
     base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     build_p = os.path.join(base_dir, 'model_sagemaker')
     os.chdir(build_p)
-    cmd_pack = 'tar czf model.tar.gz code sentiment.pth'
+    cmd_pack = 'tar czf model.tar.gz code sentiment.pth' #all in one folder.
     os.system(cmd_pack)
     cmd_upload = 'aws s3 cp model.tar.gz s3://%s' % BUCKET_NAME #overwrites
     os.system(cmd_upload)

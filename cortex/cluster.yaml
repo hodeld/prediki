@@ -1,0 +1,18 @@
+
+# instance type
+# m5.large 0,096 USD pro Stunde; t3a.small is the cheapest option: 0,0188 USD pro Stunde
+# spot: m5.large	$0.02 pro Stunde
+instance_type: m5.large
+
+# minimum number of instances (must be >= 0)
+#min_instances: 1
+
+# maximum number of instances (must be >= 1)
+max_instances: 3
+#spot: true
+
+#spot_config:
+    #instance_distribution: # [t3a.small, t3.small]
+    #on_demand_base_capacity: 0
+    #on_demand_percentage_above_base_capacity: 0
+    #on_demand_backup: true # recommended for production clusters
