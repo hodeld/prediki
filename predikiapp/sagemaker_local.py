@@ -56,7 +56,7 @@ def deploy_remote():
                                  framework_version='1.3.1',
                                  py_version='py3',
                                  )
-    predictor = pytorch_model.deploy(instance_type='ml.t2.medium', initial_instance_count=1)
+    predictor = pytorch_model.deploy(instance_type='ml.t2.medium', initial_instance_count=1) #todo define endpoint_name
     print('endpoint_name', predictor.endpoint_name)
     print('done')
     return predictor.endpoint_name
